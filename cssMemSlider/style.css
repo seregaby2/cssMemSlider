@@ -34,7 +34,7 @@ body {
     left: -100%;
 	width: inherit;
 	z-index: 0;
-	transition: 1s;
+	transition: 0s;
 
 }
 
@@ -64,31 +64,36 @@ body {
 	opacity: 1;
 	z-index: 1;
     left: 0%;
+    transition: 1s;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 700px;
+    margin:0 50px 0 50px;
+    top: 5%;
+}
 .wrapper > input {
 	display: none;
 }
 
 .wrapper .controls {
-    left: 50%;
-    margin-left: -98px;
+    left: 0%;
     position: relative;
     top: 5%;
 }
 
-.wrapper label {
+.controls label {
 	cursor: pointer;
 	display: inline-block;
 	height: 8px;
 	margin: 25px 12px 0 16px;
 	position: relative;
 	width: 8px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-o-border-radius: 50%;
 	border-radius: 50%;
-	transition: 1s
+	transition: 1s;
 
 }
 
