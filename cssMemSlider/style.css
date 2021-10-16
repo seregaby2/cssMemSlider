@@ -1,0 +1,241 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: grey;
+}
+
+.wrapper {
+	height: 100vh;
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+    background-color:rgb(34, 33, 33);
+}
+
+.slider {
+    top: 5%;
+    margin: 0 auto;
+	height: 39.375rem;
+    overflow: hidden;
+    position: relative;
+	max-width: 56.25rem;
+    box-shadow: 0 0 1.25rem rgb(0 0 0 / 50%);
+
+}
+
+.slides {
+	height: 39.375rem;
+	opacity: 0;
+	position: relative;
+    left: -100%;
+	min-width: 100%;
+	background-size: 100%;
+    background-repeat: no-repeat;
+	z-index: 0;
+	transition: 0s;
+	border-radius: 0.9rem;
+
+}
+
+.slide1 { 
+    background-image: url(img/slide1.jpg);
+    border-radius: 0.3125rem; 
+}
+.slide2 { 
+    background-image: url(img/slide2.jpg) ;
+    top: -100%;
+}
+
+.slide3 { 
+    background-image: url(img/slide3.jpg) ;
+    top: -200%;
+}
+
+.slide4 { 
+    background-image: url(img/slide4.jpg);
+    top: -300%; 
+}
+
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4 {
+	opacity: 1;
+	z-index: 1;
+    left: 0%;
+    transition: 1s;
+}
+
+#slide1:checked ~ .text > .text1,
+#slide2:checked ~ .text > .text2,
+#slide3:checked ~ .text > .text3,
+#slide4:checked ~ .text > .text4 {
+	opacity: 1;
+	z-index: 1;
+    transition: 1s;
+}
+
+#slide1:checked ~ .text > .text1{
+	left: 0%;
+}
+
+#slide2:checked ~ .text > .text2{
+	left: -25%;
+}
+
+#slide3:checked ~ .text > .text3{
+	left: -40%;
+}
+
+#slide4:checked ~ .text > .text4{
+	left: -55%;
+}
+
+.texts {
+	left: -200%;
+	position: relative;
+}
+
+.text {
+    display: flex;
+    position: relative;
+    max-width: 56.25rem;
+    margin:0 auto;
+    top: 6%;
+	color: white;
+	font-size: 1.5rem;
+}
+.wrapper > input {
+	display: none;
+}
+
+.wrapper .controls {
+	display: flex;
+    left: 0%;
+    position: relative;
+    top: 4%;
+    max-width: 56.25rem;
+    margin: 0 auto;
+    justify-content: flex-end;
+}
+
+
+.controls label {
+	cursor: pointer;
+    display: inline-block;
+    height: 1rem;
+    margin: 0 0.625rem 0 0.625rem;
+    position: relative;
+    width: 1rem;
+    border-radius: 50%;
+    transition: 1s;
+
+}
+
+
+
+.wrapper label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+	background: green;
+}
+
+.wrapper label:active, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+	background: yellow;
+}
+
+.wrapper label:focus, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+	background: blue;
+}
+
+
+
+.wrapper label:after {
+	border: 0.125rem solid #ddd;
+    content: " ";
+    display: block;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 50%;
+	
+}
+
+.text-for-mobile {
+	display: none;
+}
+
+@media (max-width: 375px){
+.slider {
+	top: 5%;
+	height: 14.375rem;
+	max-width: 20.25rem;
+}
+
+.slides {
+	height: 14.375rem;
+}
+
+#slide1:checked ~ .text > .text1{
+	left: 21%;
+    min-width: 60%;
+}
+
+#slide2:checked ~ .text > .text2 {
+    left: 11%;
+	min-width: 60%;
+}
+
+#slide3:checked ~ .text > .text3 {
+    left: -6%;
+	min-width: 60%;
+}
+
+#slide4:checked ~ .text > .text4 {
+    left: -41%;
+	min-width: 60%;
+}
+
+.text {
+	font-size: 1.2em;
+	max-width: 20.25rem;
+	top: 11%;
+	height: 6%;
+}
+
+.wrapper .controls {
+    top: 1%;
+    max-width: 20.25rem;
+    justify-content: center;
+}
+
+.text-for-mobile {
+	position: relative;
+	margin: 0 auto;
+	top:15%;
+	display: block;
+	color: white;
+	font-size: 1.5rem;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	max-width: 20.25rem;
+	line-height: 2.5rem;
+}
+
+
+}
+
+
